@@ -85,3 +85,11 @@
   background-color: $divider-color;
   margin: $divider-margin 0;
 }
+
+// Image
+
+@mixin image-container {
+  border-radius: $image-border-radius;
+  overflow: hidden;
+  background-color: $color-mercury;
+}
