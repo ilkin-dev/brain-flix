@@ -1,5 +1,13 @@
 @import "./variables";
 
+// Helper mixins
+
+@mixin center-flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Responsive mixin
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "mobile" {
@@ -92,4 +100,20 @@
   border-radius: $image-border-radius;
   overflow: hidden;
   background-color: $color-mercury;
+}
+
+// Avatar
+
+@mixin avatar-image {
+  width: $avatar-size-desktop-max;
+  height: $avatar-size-desktop-max;
+  border-radius: $avatar-border-radius;
+  overflow: hidden;
+  object-fit: cover;
+  background-color: $avatar-placeholder-color;
+
+  @include respond-to("mobile") {
+    width: $avatar-size-mobile-max;
+    height: $avatar-size-mobile-max;
+  }
 }
