@@ -1,0 +1,20 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.headline {
+  padding-top: $padding-before-headlines-desktop;
+  padding-bottom: $padding-after-headlines-desktop;
+
+  @include respond-to("mobile") {
+    padding-top: $padding-before-headlines-mobile;
+    padding-bottom: $padding-after-headlines-mobile;
+  }
+}
+
+.component {
+  margin-bottom: $padding-between-components-desktop;
+
+  @include respond-to("mobile") {
+    margin-bottom: $padding-between-components-mobile;
+  }
+}

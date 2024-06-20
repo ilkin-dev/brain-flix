@@ -133,11 +133,25 @@ button {
   line-height: 44px;
   font-weight: 700;
 }
+@media (max-width: 767px) {
+  .page-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+}
 
 .section-header {
   font-size: 12px;
   line-height: 20px;
   font-weight: 700;
+}
+@media (max-width: 767px) {
+  .section-header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+  }
 }
 
 .subheader {
@@ -145,11 +159,25 @@ button {
   line-height: 22px;
   font-weight: 700;
 }
+@media (max-width: 767px) {
+  .subheader {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+}
 
 .body-copy {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
+}
+@media (max-width: 767px) {
+  .body-copy {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
 }
 
 .labels-buttons {
@@ -157,34 +185,14 @@ button {
   line-height: 20px;
   font-weight: 700;
 }
-
 @media (max-width: 767px) {
-  .page-header {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-  }
-  .section-header {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
-  }
-  .subheader {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 700;
-  }
-  .body-copy {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-  }
   .labels-buttons {
     font-size: 10px;
     line-height: 20px;
     font-weight: 700;
   }
 }
+
 @font-face {
   font-family: "Avenir Next LT Pro";
   src: url("/src/assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
@@ -205,4 +213,24 @@ button {
 }
 body {
   font-family: "Avenir Next LT Pro", sans-serif;
+}
+
+.headline {
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .headline {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+}
+
+.component {
+  margin-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .component {
+    margin-bottom: 16px;
+  }
 }
