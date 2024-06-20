@@ -234,3 +234,32 @@ body {
     margin-bottom: 16px;
   }
 }
+
+.button-primary {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 150px;
+  min-width: 150px;
+  padding: 0 32px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #0095ff;
+}
+@media (max-width: 767px) {
+  .button-primary {
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+  }
+}
+.button-primary:hover {
+  background-color: #0065ad;
+}

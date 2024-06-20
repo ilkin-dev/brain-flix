@@ -1,3 +1,5 @@
+@import "./variables";
+
 // Responsive mixin
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "mobile" {
@@ -13,4 +15,36 @@
       @content;
     }
   }
+}
+
+// Button mixins
+
+@mixin button-base {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: $button-border-radius;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @include respond-to("mobile") {
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+  }
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
+
+@mixin button-size($width: $button-width-desktop) {
+  width: $width;
+  min-width: $width;
+  padding: 0 $button-padding-horizontal;
+  height: $button-height;
 }

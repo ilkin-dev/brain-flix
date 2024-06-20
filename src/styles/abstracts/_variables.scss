@@ -23,3 +23,16 @@ $padding-between-components-desktop: 24px;
 $padding-before-headlines-mobile: 24px;
 $padding-after-headlines-mobile: 16px;
 $padding-between-components-mobile: 16px;
+
+// BUTTONS
+
+// Button sizes
+$button-height: 40px;
+$button-width-desktop: 150px; // Minimum width for desktop and tablet
+$button-padding-horizontal: 32px;
+$button-border-radius: 4px;
+
+// Colors
+$button-text-color: $color-white; // White
+$button-background-color: $color-blue; // BrainFlix-DarkBlue
+$button-hover-color: $color-dark-blue; // Darker shade for hover
