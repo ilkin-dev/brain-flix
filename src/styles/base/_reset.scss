@@ -1,10 +1,12 @@
-/* Base styles */
+// Box sizing border-box for all elements
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+// Remove default margin and padding
 html,
 body,
 div,
@@ -92,6 +94,7 @@ video {
   vertical-align: baseline;
 }
 
+// Typography normalization
 body {
   line-height: 1.2;
   display: flex;
@@ -99,12 +102,14 @@ body {
   min-height: 100vh;
 }
 
+// Lists normalization
 ul,
 ol {
   list-style: none;
   list-style-type: none;
 }
 
+// Forms normalization
 button,
 input,
 select,
@@ -115,73 +120,17 @@ textarea {
   line-height: inherit;
 }
 
+// Resetting anchor text decoration and color
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
 
+// Remove default button styling
 button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-}
-
-.page-header {
-  font-size: 33px;
-  line-height: 44px;
-  font-weight: 700;
-}
-
-.section-header {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 700;
-}
-
-.subheader {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 700;
-}
-
-.body-copy {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-}
-
-.labels-buttons {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 700;
-}
-
-@media (max-width: 767px) {
-  .page-header {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
-  }
-  .section-header {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
-  }
-  .subheader {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 700;
-  }
-  .body-copy {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-  }
-  .labels-buttons {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
-  }
 }
