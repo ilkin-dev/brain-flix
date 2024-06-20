@@ -1,0 +1,5 @@
+@import "../abstracts/mixins";
+
+.form-field {
+  @include form-field-base;
+}

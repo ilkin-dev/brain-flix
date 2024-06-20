@@ -12,6 +12,8 @@ $color-dark-blue: #0065ad; // CTA hover state color
 $color-mercury: #e1e1e1; // Divider line, form field outline color
 $color-alabaster: #fafafa; // Form field background color
 
+$error-color: #d22d2d;
+
 // PADDINGS
 
 // Desktop and Tablet Paddings
@@ -36,3 +38,16 @@ $button-border-radius: 4px;
 $button-text-color: $color-white; // White
 $button-background-color: $color-blue; // BrainFlix-DarkBlue
 $button-hover-color: $color-dark-blue; // Darker shade for hover
+
+// FORM FIELD
+
+// Dimensions
+$form-field-height-desktop: 40px;
+$form-field-height-mobile: 36px;
+$form-field-width-min: 240px;
+$form-field-padding-desktop: 16px;
+$form-field-padding-mobile: 12px;
+$form-field-label-spacing: 4px;
+$form-field-border-width-default: 1px;
+$form-field-border-width-active: 2px;
+$form-field-border-radius: 4px;

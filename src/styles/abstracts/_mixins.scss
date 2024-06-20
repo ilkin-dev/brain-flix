@@ -48,3 +48,31 @@
   padding: 0 $button-padding-horizontal;
   height: $button-height;
 }
+
+// Form Field Mixin
+
+@mixin form-field-base {
+  display: block;
+  width: 100%;
+  max-width: $form-field-width-min;
+  height: $form-field-height-desktop;
+  padding: $form-field-padding-desktop;
+  border: $form-field-border-width-default solid $color-mercury;
+  border-radius: $form-field-border-radius;
+  margin-bottom: $form-field-label-spacing;
+
+  &:focus {
+    border-width: $form-field-border-width-active;
+    border-color: $color-blue;
+    outline: none;
+  }
+
+  &.error {
+    border-color: $error-color;
+  }
+
+  @include respond-to("mobile") {
+    height: $form-field-height-mobile;
+    padding: $form-field-padding-mobile;
+  }
+}
