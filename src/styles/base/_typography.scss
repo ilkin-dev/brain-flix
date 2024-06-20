@@ -4,64 +4,61 @@
 $font-weight-bold: 700;
 $font-weight-regular: 400;
 
-// Desktop and Tablet Text Styles
+// Text Styles
 .page-header {
   font-size: 33px;
   line-height: 44px;
   font-weight: $font-weight-bold;
+
+  @include respond-to("mobile") {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $font-weight-bold;
+  }
 }
 
 .section-header {
   font-size: 12px;
   line-height: 20px;
   font-weight: $font-weight-bold;
+
+  @include respond-to("mobile") {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: $font-weight-bold;
+  }
 }
 
 .subheader {
   font-size: 14px;
   line-height: 22px;
   font-weight: $font-weight-bold;
+
+  @include respond-to("mobile") {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: $font-weight-bold;
+  }
 }
 
 .body-copy {
   font-size: 14px;
   line-height: 22px;
   font-weight: $font-weight-regular;
+
+  @include respond-to("mobile") {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: $font-weight-regular;
+  }
 }
 
 .labels-buttons {
   font-size: 12px;
   line-height: 20px;
   font-weight: $font-weight-bold;
-}
 
-// Mobile Text Styles
-@include respond-to("mobile") {
-  .page-header {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: $font-weight-bold;
-  }
-
-  .section-header {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: $font-weight-bold;
-  }
-
-  .subheader {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: $font-weight-bold;
-  }
-
-  .body-copy {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: $font-weight-regular;
-  }
-
-  .labels-buttons {
+  @include respond-to("mobile") {
     font-size: 10px;
     line-height: 20px;
     font-weight: $font-weight-bold;
