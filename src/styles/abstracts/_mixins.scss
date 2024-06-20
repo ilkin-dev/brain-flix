@@ -76,3 +76,12 @@
     padding: $form-field-padding-mobile;
   }
 }
+
+// Divider
+
+@mixin divider {
+  width: $divider-width;
+  height: $divider-height;
+  background-color: $divider-color;
+  margin: $divider-margin 0;
+}
