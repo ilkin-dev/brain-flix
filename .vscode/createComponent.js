@@ -37,7 +37,7 @@ const createComponent = (folderName, componentName) => {
   const componentSCSSPath = path.join(finalComponentDir, `${componentName}.scss`);
 
   createFile(componentJSPath, generateJSContent(componentName));
-  createFile(componentSCSSPath, generateSCSSContent(componentName));
+  createFile(componentSCSSPath, generateCSSContent(componentName));
 
   console.log(`Component ${componentName} created successfully in folder ${folderName}.`);
 };
@@ -52,7 +52,7 @@ import './${componentName}.css';
 
 const ${componentName} = () => {
   return (
-    <div className="${componentName}">
+    <div className="${componentName.toLowerCase()}">
       {/* Your component code */}
     </div>
   );
@@ -62,9 +62,8 @@ export default ${componentName};
 `;
 };
 
-const generateSCSSContent = (componentName) => {
+const generateCSSContent = (componentName) => {
   return `.${componentName.toLowerCase()} {
-  /* Your component styles */
 }
 `;
 };
