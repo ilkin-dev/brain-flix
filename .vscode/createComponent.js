@@ -48,7 +48,7 @@ const createFile = (filePath, content) => {
 
 const generateJSContent = (componentName) => {
   return `import React from 'react';
-import './${componentName}.scss';
+import './${componentName}.css';
 
 const ${componentName} = () => {
   return (
@@ -63,7 +63,7 @@ export default ${componentName};
 };
 
 const generateSCSSContent = (componentName) => {
-  return `.${componentName} {
+  return `.${componentName.toLowerCase()} {
   /* Your component styles */
 }
 `;
