@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Create Component",
+        "type": "shell",
+        "command": "node .vscode/createComponent.js ${input:componentName}",
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "id": "componentName",
+        "type": "promptString",
+        "description": "Enter the component name"
+      }
+    ]
+  }
+  
