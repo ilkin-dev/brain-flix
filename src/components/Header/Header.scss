@@ -1,0 +1,24 @@
+@import "../../styles/abstracts/variables";
+
+$margin-after-button: 32px;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: $padding-before-after-header;
+  padding-bottom: $padding-before-after-header;
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.avatar-container {
+  margin-left: $margin-after-button;
+}

@@ -28,10 +28,10 @@
 // Button mixins
 
 @mixin button-base {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  flex-direction: row;
   cursor: pointer;
   border: none;
   border-radius: $button-border-radius;
@@ -60,11 +60,13 @@
 // Form Field Mixin
 
 @mixin form-field-base {
-  display: block;
+  display: flex;
   width: 100%;
   max-width: $form-field-width-min;
   height: $form-field-height-desktop;
-  padding: $form-field-padding-desktop;
+  align-items: center;
+  justify-content: center;
+  //padding: $form-field-padding-desktop;
   border: $form-field-border-width-default solid $color-mercury;
   border-radius: $form-field-border-radius;
   margin-bottom: $form-field-label-spacing;
@@ -104,7 +106,7 @@
 
 // Avatar
 
-@mixin avatar-image {
+@mixin avatar {
   width: $avatar-size-desktop-max;
   height: $avatar-size-desktop-max;
   border-radius: $avatar-border-radius;
@@ -115,5 +117,9 @@
   @include respond-to("mobile") {
     width: $avatar-size-mobile-max;
     height: $avatar-size-mobile-max;
+  }
+
+  img {
+    height: 100%;
   }
 }

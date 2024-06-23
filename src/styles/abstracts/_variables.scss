@@ -16,28 +16,42 @@ $error-color: #d22d2d;
 
 // PADDINGS
 
+// All
+$padding-before-after-header: 16px;
+
 // Desktop and Tablet Paddings
 $padding-before-headlines-desktop: 36px;
 $padding-after-headlines-desktop: 24px;
 $padding-between-components-desktop: 24px;
+
+$padding-section-desktop: 128px;
+$padding-section-tablet: 64px;
 
 // Mobile Paddings
 $padding-before-headlines-mobile: 24px;
 $padding-after-headlines-mobile: 16px;
 $padding-between-components-mobile: 16px;
 
+$padding-section-mobile: 8px;
+
 // BUTTONS
 
 // Button sizes
 $button-height: 40px;
 $button-width-desktop: 150px; // Minimum width for desktop and tablet
-$button-padding-horizontal: 32px;
+$button-padding-horizontal: 8px;
 $button-border-radius: 4px;
 
 // Colors
 $button-text-color: $color-white; // White
 $button-background-color: $color-blue; // BrainFlix-DarkBlue
 $button-hover-color: $color-dark-blue; // Darker shade for hover
+
+// SEARCH BAR
+$searchBar-height: 40px;
+$searchBar-border-radius: 4px;
+$searchBar-padding-horizontal: 16px;
+$searchBar-width: 320px;
 
 // FORM FIELD
 

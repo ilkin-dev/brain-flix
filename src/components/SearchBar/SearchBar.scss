@@ -1,0 +1,36 @@
+@import "../../styles/abstracts/variables";
+
+// Variables
+
+$margin-after-bar: 32px;
+$padding-after-icon: 8px;
+
+$bar-height: 40px;
+$bar-border-width: 1px;
+$bar-border-radius: 4px;
+//////////////////////////////////
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: $searchBar-padding-horizontal;
+
+  height: $bar-height;
+
+  border: $bar-border-width solid $color-mercury;
+  border-radius: $bar-border-radius;
+  margin-right: $margin-after-bar;
+
+  &__icon {
+    height: 20px;
+    padding-right: $padding-after-icon;
+  }
+  &__input {
+    height: auto;
+    border: none;
+
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+}

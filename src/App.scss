@@ -4,10 +4,7 @@
 @import "./styles/base/typography";
 @import "./styles/base/base";
 
-@import "./styles/utilities/padding";
+@import "./styles/components/section";
+@import "./styles/components/formField";
 
-@import "./styles/components/buttons";
-@import "./styles/components/logo";
-@import "./styles/components/divider";
-@import "./styles/components/image";
-@import "./styles/components/avatar";
+@import "./styles/utilities/padding";

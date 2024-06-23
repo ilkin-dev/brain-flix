@@ -1,0 +1,17 @@
+@import "../../styles/abstracts/mixins";
+
+.button {
+  color: $button-text-color;
+  background-color: $button-background-color;
+
+  &__img {
+    height: 20px;
+  }
+
+  &__text {
+    padding-left: 24px;
+  }
+
+  @include button-base;
+  @include button-size;
+}
