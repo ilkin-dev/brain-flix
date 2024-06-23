@@ -1,22 +1,54 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Create Component",
-        "type": "shell",
-        "command": "node .vscode/createComponent.js ${input:componentName}",
-        "problemMatcher": [],
-        "options": {
-          "cwd": "${workspaceFolder}"
-        }
-      }
-    ],
-    "inputs": [
-      {
-        "id": "componentName",
-        "type": "promptString",
-        "description": "Enter the component name"
-      }
-    ]
-  }
-  
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create Single Component",
+      "type": "shell",
+      "command": "node ${workspaceFolder}\\\\.vscode\\createSingleComponent.js",
+      "args": [
+        "${input:componentName}"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Create Subcomponent",
+      "type": "shell",
+      "command": "node ${workspaceFolder}\\\\.vscode\\createSubcomponent.js",
+      "args": [
+        "${input:componentName}",
+        "${input:subcomponentName}",
+        "${input:folderName}"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "componentName",
+      "type": "promptString",
+      "description": "Enter the main component name"
+    },
+    {
+      "id": "subcomponentName",
+      "type": "promptString",
+      "description": "Enter the subcomponent name"
+    },
+    {
+      "id": "folderName",
+      "type": "promptString",
+      "description": "Enter the folder name (optional) where the subcomponent should be created (leave empty for default)"
+    }
+  ]
+}
