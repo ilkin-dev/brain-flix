@@ -7,24 +7,39 @@ const createComponent = (folderName, componentName) => {
   const rootDir = path.resolve(__dirname, '..'); // Resolve the absolute path to the project root
   const baseDir = path.join(rootDir, 'src', 'components'); // Adjust the base directory as per your project structure
 
-  // Determine component directory
-  let componentDir = baseDir;
-  if (folderName) {
-    componentDir = path.join(baseDir, folderName);
-    // Create the folder if it doesn't exist
-    if (!fs.existsSync(componentDir)) {
-      fs.mkdirSync(componentDir, { recursive: true });
-    }
+  // Ensure folderName and componentName are provided
+  if (!folderName || !componentName) {
+    console.error('Folder name and component name are required.');
+    process.exit(1);
   }
 
-  // Create component files
-  const componentJSPath = path.join(componentDir, `${componentName}.js`);
-  const componentSCSSPath = path.join(componentDir, `${componentName}.scss`);
+  // Determine component directory
+  let componentDir;
+  if (folderName === 'components') {
+    componentDir = baseDir; // Use baseDir directly if folderName is 'components'
+  } else {
+    componentDir = path.join(baseDir, folderName); // Otherwise, create inside baseDir/folderName
+  }
+
+  // Create the folder if it doesn't exist
+  if (!fs.existsSync(componentDir)) {
+    fs.mkdirSync(componentDir, { recursive: true });
+  }
+
+  // Create component folder with componentName inside componentDir
+  const finalComponentDir = path.join(componentDir, componentName);
+  if (!fs.existsSync(finalComponentDir)) {
+    fs.mkdirSync(finalComponentDir);
+  }
+
+  // Create component files inside finalComponentDir
+  const componentJSPath = path.join(finalComponentDir, `${componentName}.js`);
+  const componentSCSSPath = path.join(finalComponentDir, `${componentName}.scss`);
 
   createFile(componentJSPath, generateJSContent(componentName));
   createFile(componentSCSSPath, generateSCSSContent(componentName));
 
-  console.log(`Component ${componentName} created successfully${folderName ? ` in folder ${folderName}` : ''}.`);
+  console.log(`Component ${componentName} created successfully in folder ${folderName}.`);
 };
 
 const createFile = (filePath, content) => {
@@ -56,10 +71,5 @@ const generateSCSSContent = (componentName) => {
 
 // Extract folderName and componentName from command line arguments
 const [, , folderName, componentName] = process.argv;
-
-if (!folderName || !componentName) {
-  console.error('Folder name and component name are required.');
-  process.exit(1);
-}
 
 createComponent(folderName, componentName);
