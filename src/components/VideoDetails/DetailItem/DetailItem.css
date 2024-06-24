@@ -1,0 +1,15 @@
+.detailItem {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.detailItem__icon {
+  height: 18px;
+  padding-right: 8px;
+}
+.detailItem__text {
+  font-size: 13px;
+  color: #afafaf;
+}

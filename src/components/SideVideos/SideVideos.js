@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideVideos.scss';
+import './SideVideos.css';
 
 const SideVideos = () => {
   return (

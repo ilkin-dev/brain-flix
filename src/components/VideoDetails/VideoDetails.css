@@ -1,0 +1,14 @@
+.videoDetails__beforeDescription {
+  display: flex;
+  flex-direction: row;
+}
+
+.beforeDescription__left {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.beforeDescription__left-date {
+  font-size: 13px;
+  color: #afafaf;
+}

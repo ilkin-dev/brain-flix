@@ -1,0 +1,29 @@
+.mainVideo {
+  background-color: #000000;
+  height: 75vh;
+}
+
+.container {
+  width: 100%; /* Adjust width as needed */
+  height: 75vh; /* Fixed height of the outer container */
+  position: relative;
+  overflow: hidden;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightgray;
+}
+
+.controlsBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}

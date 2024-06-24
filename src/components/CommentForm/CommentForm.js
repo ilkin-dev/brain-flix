@@ -1,5 +1,5 @@
 import React from 'react';
-import './CommentForm.scss';
+import './CommentForm.css';
 
 const CommentForm = () => {
   return (

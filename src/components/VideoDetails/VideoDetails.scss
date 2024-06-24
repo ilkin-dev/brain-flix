@@ -1,0 +1,29 @@
+@import "../../styles/abstracts/variables";
+
+.videoDetails {
+  &__title {
+  }
+
+  &__beforeDescription {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.beforeDescription {
+  &__left {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    &-channel {
+    }
+
+    &-date {
+      font-size: 13px;
+      color: $color-silver;
+    }
+  }
+
+  &__right {
+  }
+}
