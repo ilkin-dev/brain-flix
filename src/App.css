@@ -181,14 +181,34 @@ button {
 .labels-buttons {
   font-size: 12px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 @media (max-width: 767px) {
   .labels-buttons {
     font-size: 10px;
     line-height: 20px;
-    font-weight: 700;
+    font-weight: 600;
   }
+}
+
+.silver-text {
+  font-size: 13px;
+  line-height: 22px;
+  color: #afafaf;
+}
+@media (max-width: 767px) {
+  .silver-text {
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+
+.text-demi {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 700;
 }
 
 @font-face {
@@ -230,13 +250,12 @@ body {
 .form-field {
   display: flex;
   width: 100%;
-  max-width: 240px;
   height: 40px;
   align-items: center;
   justify-content: center;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
-  margin-bottom: 4px;
+  padding: 10px;
 }
 .form-field:focus {
   border-width: 2px;
@@ -250,6 +269,26 @@ body {
   .form-field {
     height: 36px;
     padding: 12px;
+  }
+}
+
+.component {
+  padding-top: 24px;
+}
+@media (max-width: 767px) {
+  .component {
+    padding-top: 16px;
+  }
+}
+
+.headline {
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .headline {
+    padding-top: 24px;
+    padding-bottom: 16px;
   }
 }
 

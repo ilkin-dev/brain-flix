@@ -1,19 +1,13 @@
 @import "../../../styles/abstracts/variables";
 
 .detailItem {
-  width: 250px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-right: 16px;
 
   &__icon {
-    height: 18px;
-    padding-right: 8px;
-  }
-
-  &__text {
-    font-size: 13px;
-    color: $color-silver;
+    height: 16px;
   }
 }

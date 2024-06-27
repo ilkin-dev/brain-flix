@@ -1,4 +1,5 @@
 @import "../abstracts/mixins";
+@import "../abstracts/variables";
 
 // Font Weights
 $font-weight-bold: 700;
@@ -57,11 +58,29 @@ $font-weight-regular: 400;
 .labels-buttons {
   font-size: 12px;
   line-height: 20px;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-demi;
 
   @include respond-to("mobile") {
     font-size: 10px;
     line-height: 20px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-demi;
   }
+}
+
+.silver-text {
+  font-size: 13px;
+  line-height: 22px;
+  color: $color-silver;
+
+  @include respond-to("mobile") {
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+
+.text-demi {
+  font-weight: $font-weight-demi;
+}
+.text-bold {
+  font-weight: $font-weight-bold;
 }

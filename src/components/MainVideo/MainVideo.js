@@ -1,19 +1,28 @@
-import React from 'react';
 import './MainVideo.css';
 import ControlsBar from './ControlsBar/ControlsBar';
-import videoDetails from '../../data/video-details.json';
 
-const MainVideo = () => {
+const MainVideo = ({ currentVideoDetails }) => {
+  if (!currentVideoDetails) {
+    return <div>Loading video...</div>;
+  }
   return (
-    <div className="mainVideo section component">
+    <div className="mainVideo section">
       <div className='container'>
-        <div className='videoPlayer'>
-          <video width="100%" height="auto" controls autoPlay loop preload="auto">
-            <source src={videoDetails[0].video} />
+        <img className='mainVideo__thumbnail' src={currentVideoDetails.image} alt='VIDEO THUMBNAIL' ></img>
 
+        <div className='videoPlayer'>
+          <video
+            className="videoPlayer__video"
+            controls
+            autoPlay
+            loop
+            preload="auto"
+            width="100%"
+            height="auto"
+          >
+            <source src={currentVideoDetails.video} type="video/mp4" />
           </video>
         </div>
-        <ControlsBar />
       </div>
     </div>
   );

@@ -1,0 +1,23 @@
+.bottomGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bottomGroup {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .bottomGroup {
+    flex-direction: column;
+  }
+}
+.bottomGroup__detailAndComment {
+  border-right: 1px solid #e1e1e1;
+}
+@media (max-width: 1023px) {
+  .bottomGroup__detailAndComment {
+    border: none;
+  }
+}

@@ -1,0 +1,23 @@
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  padding: 24px 16px;
+
+  &__avatar {
+    margin-right: 32px;
+  }
+
+  &__right {
+    width: 100%;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+}

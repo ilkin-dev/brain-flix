@@ -1,9 +1,14 @@
 import React from 'react';
 import './Divider.css';
 
-const Divider = () => {
+const Divider = ({ clsName }) => {
+  let newClassName = "";
+  if (clsName)
+    newClassName = clsName + " divider";
+  else
+    newClassName = "divider";
   return (
-    <div className="divider">
+    <div className={newClassName}>
     </div>
   );
 };

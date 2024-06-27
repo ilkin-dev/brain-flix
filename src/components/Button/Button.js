@@ -1,9 +1,14 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ icon, text }) => {
+const Button = ({ className, icon, text }) => {
+  let newClassName = "";
+  if (className)
+    newClassName = { className } + " button labels-buttons";
+  else
+    newClassName = " button labels-buttons";
   return (
-    <button className='button labels-buttons'>
+    <button className={newClassName}>
       <img className='button__img' src={icon}></img>
       <p className='button__text'>{text}</p>
     </button>

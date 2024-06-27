@@ -2,10 +2,10 @@ import React from 'react';
 import './Avatar.css';
 import avatarImage from '../../assets/images/Mohan-muruge.jpg';
 
-const Avatar = () => {
+const Avatar = ({ isImageProvided }) => {
   return (
     <div className="avatar">
-      <img src={avatarImage}></img>
+      {isImageProvided ? <img src={avatarImage}></img> : ''}
     </div>
   );
 };

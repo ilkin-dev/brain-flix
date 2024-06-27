@@ -1,3 +1,11 @@
-.CommentsList {
-  /* Your component styles */
+@import "../../styles/abstracts/mixins";
+
+.commentsList {
+  &-lastDivider {
+    visibility: hidden;
+
+    @include respond-to("non-desktop") {
+      visibility: visible;
+    }
+  }
 }

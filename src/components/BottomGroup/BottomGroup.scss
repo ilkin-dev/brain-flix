@@ -1,2 +1,24 @@
-.bottomgroup {
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.bottomGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  @include respond-to("tablet") {
+    flex-direction: column;
+  }
+
+  @include respond-to("mobile") {
+    flex-direction: column;
+  }
+
+  &__detailAndComment {
+    border-right: 1px solid $color-mercury;
+
+    @include respond-to("non-desktop") {
+      border: none;
+    }
+  }
 }

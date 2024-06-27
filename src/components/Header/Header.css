@@ -6,13 +6,36 @@
   padding-top: 16px;
   padding-bottom: 16px;
 }
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .header__right {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
 }
+@media (max-width: 767px) {
+  .header__right {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .avatar-container {
   margin-left: 32px;
+}
+@media (max-width: 767px) {
+  .avatar-container {
+    margin-top: 16px;
+  }
 }

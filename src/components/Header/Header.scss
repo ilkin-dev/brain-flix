@@ -1,4 +1,5 @@
 @import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
 
 $margin-after-button: 32px;
 
@@ -11,14 +12,30 @@ $margin-after-button: 32px;
   padding-top: $padding-before-after-header;
   padding-bottom: $padding-before-after-header;
 
+  @include respond-to("mobile") {
+    flex-direction: column;
+    @include center-flexbox();
+  }
+
   &__right {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
+    @include respond-to("mobile") {
+      width: 100%;
+      flex-direction: column;
+      margin-top: 16px;
+      @include center-flexbox();
+    }
   }
 }
 
 .avatar-container {
   margin-left: $margin-after-button;
+
+  @include respond-to("mobile") {
+    margin-top: 16px;
+  }
 }

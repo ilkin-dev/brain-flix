@@ -1,3 +1,8 @@
-.CommentsList {
-  /* Your component styles */
+.commentsList-lastDivider {
+  visibility: hidden;
+}
+@media (max-width: 1023px) {
+  .commentsList-lastDivider {
+    visibility: visible;
+  }
 }

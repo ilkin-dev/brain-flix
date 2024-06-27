@@ -1,3 +1,14 @@
-.CommentForm {
-  /* Your component styles */
+.commentForm {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 24px 16px;
+}
+.commentForm .avatar {
+  margin-right: 32px;
+}
+.commentForm__mid {
+  flex: 7;
+  padding-right: 24px;
 }

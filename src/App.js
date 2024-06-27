@@ -1,21 +1,46 @@
-import useState from 'react';
+// src/App.js
+import React, { useEffect } from 'react';
+import useApi from './api/useApi';
+
 import './App.css';
 
 import Header from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
 import BottomGroup from './components/BottomGroup/BottomGroup';
 
-import videoDetails from './data/video-details.json';
+const App = () => {
+  const {
+    apiKey,
+    videos,
+    currentVideo,
+    loading,
+    handleVideoClick,
+    handlePostComment,
+    initialize,
+  } = useApi();
 
-function App() {
+  useEffect(() => {
+    initialize();
+  }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const sideVideos = videos.filter(video => video.id !== currentVideo?.id);
+  const commentsCount = currentVideo?.comments?.length || 0;
   return (
     <div className="App">
-      < Header />
-      < MainVideo />
-      < BottomGroup currentVideoDetails={videoDetails[0]} />
+      <Header />
+      <MainVideo currentVideoDetails={currentVideo} />
+      <BottomGroup
+        videos={sideVideos}
+        currentVideoDetails={currentVideo}
+        handleVideoClick={handleVideoClick}
+        commentCountOfCurrentVideo={commentsCount}
+        handlePostComment={handlePostComment} />
     </div>
   );
-}
+};
 
 export default App;

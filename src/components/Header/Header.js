@@ -18,7 +18,7 @@ const Header = () => {
         <SearchBar placeholder='Search' />
         <Button icon={icons.upload} text="UPLOAD" />
         <div className='avatar-container'>
-          <Avatar />
+          <Avatar isImageProvided={true} />
         </div>
       </div>
     </div>

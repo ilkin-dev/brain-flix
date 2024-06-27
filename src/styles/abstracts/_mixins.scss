@@ -22,6 +22,10 @@
     @media (min-width: 1024px) {
       @content;
     }
+  } @else if $breakpoint == "non-desktop" {
+    @media (max-width: 1023px) {
+      @content;
+    }
   }
 }
 
@@ -42,7 +46,6 @@
   @include respond-to("mobile") {
     width: 100%;
     min-width: 100%;
-    padding: 0;
   }
 
   &:hover {
@@ -62,14 +65,14 @@
 @mixin form-field-base {
   display: flex;
   width: 100%;
-  max-width: $form-field-width-min;
+  //max-width: $form-field-width-min;
   height: $form-field-height-desktop;
   align-items: center;
   justify-content: center;
-  //padding: $form-field-padding-desktop;
   border: $form-field-border-width-default solid $color-mercury;
   border-radius: $form-field-border-radius;
-  margin-bottom: $form-field-label-spacing;
+
+  padding: 10px;
 
   &:focus {
     border-width: $form-field-border-width-active;
@@ -93,7 +96,6 @@
   width: $divider-width;
   height: $divider-height;
   background-color: $divider-color;
-  margin: $divider-margin 0;
 }
 
 // Image
@@ -121,5 +123,27 @@
 
   img {
     height: 100%;
+  }
+}
+
+// Headline
+
+@mixin headline {
+  padding-top: 36px;
+  padding-bottom: 24px;
+
+  @include respond-to("mobile") {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+}
+
+// Component
+
+@mixin component {
+  padding-top: 24px;
+
+  @include respond-to("mobile") {
+    padding-top: 16px;
   }
 }
