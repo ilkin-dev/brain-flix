@@ -20,9 +20,19 @@
 .beforeDescription__left-channel {
   padding-right: 32px;
 }
+@media (max-width: 767px) {
+  .beforeDescription__left-channel {
+    margin-bottom: 16px;
+  }
+}
 .beforeDescription__left-date {
   font-size: 13px;
   color: #afafaf;
+}
+@media (max-width: 767px) {
+  .beforeDescription__left {
+    flex-direction: column;
+  }
 }
 .beforeDescription__right {
   flex: 1;
@@ -32,4 +42,14 @@
 }
 .beforeDescription__right-views {
   padding-right: 32px;
+}
+@media (max-width: 767px) {
+  .beforeDescription__right-views {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .beforeDescription__right {
+    flex-direction: column;
+  }
 }
