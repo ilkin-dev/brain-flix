@@ -1,7 +1,6 @@
 import React from 'react';
 import './SideVideos.css';
 import SideVideoItem from './SideVideoItem/SideVideoItem';
-import Divider from '../Divider/Divider';
 
 const SideVideos = ({ videosList, onVideoClick }) => {
   if (!videosList) {
