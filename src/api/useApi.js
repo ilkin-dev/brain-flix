@@ -35,7 +35,6 @@ const useApi = () => {
 
     const handlePostComment = async (id, comment) => {
         try {
-            // Create the request body with only the required fields
             const requestBody = {
                 name: comment.name,
                 comment: comment.comment

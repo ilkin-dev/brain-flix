@@ -1,45 +1,22 @@
-// src/App.js
-import React, { useEffect } from 'react';
-import useApi from './api/useApi';
-
 import './App.css';
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header/Header';
-import MainVideo from './components/MainVideo/MainVideo';
-import BottomGroup from './components/BottomGroup/BottomGroup';
+import VideoUploadPage from './pages/VideoUploadPage/VideoUploadPage';
+import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 
 const App = () => {
-  const {
-    apiKey,
-    videos,
-    currentVideo,
-    loading,
-    handleVideoClick,
-    handlePostComment,
-    initialize,
-  } = useApi();
-
-  useEffect(() => {
-    initialize();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  const sideVideos = videos.filter(video => video.id !== currentVideo?.id);
-  const commentsCount = currentVideo?.comments?.length || 0;
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
-      <MainVideo currentVideoDetails={currentVideo} apiKey={apiKey} />
-      <BottomGroup
-        videos={sideVideos}
-        currentVideoDetails={currentVideo}
-        handleVideoClick={handleVideoClick}
-        commentCountOfCurrentVideo={commentsCount}
-        handlePostComment={handlePostComment} />
-    </div>
+      <Routes>
+        <Route path="/" element={<VideoPlayerPage />} />
+        <Route path="/video" element={<VideoPlayerPage />} />
+        <Route path="/video/:id" element={<VideoPlayerPage />} />
+        <Route path="/upload" element={<VideoUploadPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
