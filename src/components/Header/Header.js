@@ -19,7 +19,9 @@ const Header = () => {
       </Link>
       <div className='header__right'>
         <SearchBar placeholder='Search' />
-        <Button icon={icons.upload} text="UPLOAD" />
+        <Link to={"/upload"}>
+          <Button icon={icons.upload} text="UPLOAD" />
+        </Link>
         <div className='avatar-container'>
           <Avatar isImageProvided={true} />
         </div>
