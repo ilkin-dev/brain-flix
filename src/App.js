@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <MainVideo currentVideoDetails={currentVideo} />
+      <MainVideo currentVideoDetails={currentVideo} apiKey={apiKey} />
       <BottomGroup
         videos={sideVideos}
         currentVideoDetails={currentVideo}

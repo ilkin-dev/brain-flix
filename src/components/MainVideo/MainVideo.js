@@ -1,10 +1,11 @@
 import './MainVideo.css';
-import ControlsBar from './ControlsBar/ControlsBar';
 
-const MainVideo = ({ currentVideoDetails }) => {
+const MainVideo = ({ currentVideoDetails, apiKey }) => {
   if (!currentVideoDetails) {
     return <div>Loading video...</div>;
   }
+
+  let videoSrc = `https://unit-3-project-api-0a5620414506.herokuapp.com/stream?api_key=${apiKey}`;
   return (
     <div className="mainVideo section">
       <div className='container'>
@@ -20,7 +21,7 @@ const MainVideo = ({ currentVideoDetails }) => {
             width="100%"
             height="auto"
           >
-            <source src={currentVideoDetails.video} type="video/mp4" />
+            <source src={videoSrc} type="video/mp4" />
           </video>
         </div>
       </div>

@@ -49,9 +49,6 @@ const useApi = () => {
                 body: JSON.stringify(requestBody),
             });
 
-            console.log("Request Body:", JSON.stringify(requestBody));
-            console.log("Response Status:", response.status);
-
             if (!response.ok) {
                 throw new Error("Failed to post comment");
             }
