@@ -8,3 +8,9 @@
 .detailItem__icon {
   height: 16px;
 }
+@media (max-width: 767px) {
+  .detailItem {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

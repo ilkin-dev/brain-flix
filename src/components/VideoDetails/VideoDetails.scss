@@ -55,6 +55,7 @@
       padding-right: 32px;
       @include respond-to("mobile") {
         margin-bottom: 16px;
+        padding-right: 0;
       }
     }
 

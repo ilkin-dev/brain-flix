@@ -46,6 +46,7 @@
 @media (max-width: 767px) {
   .beforeDescription__right-views {
     margin-bottom: 16px;
+    padding-right: 0;
   }
 }
 @media (max-width: 767px) {

@@ -23,23 +23,26 @@ const CommentForm = ({ onAddComment }) => {
   return (
     <form className="commentForm" onSubmit={handleSubmit}>
       <Avatar isImageProvided={true} />
-      <div className='commentForm__mid'>
-        <div className='commentForm__label silver-text text-demi'>
-          JOIN THE CONVERSATION
+      <div className='commentForm__right'>
+        <div className='commentForm__mid'>
+          <div className='commentForm__label silver-text text-demi'>
+            JOIN THE CONVERSATION
+          </div>
+          <input
+            className='commentForm__input form-field body-copy'
+            placeholder='Add a new comment'
+            value={comment}
+            onChange={handleInputChange}
+          />
         </div>
-        <input
-          className='commentForm__input form-field body-copy'
-          placeholder='Add a new comment'
-          value={comment}
-          onChange={handleInputChange}
+        <Button
+          className="commentForm__button"
+          icon={icons.addComment}
+          text="COMMENT"
+          onClick={handleSubmit}
         />
       </div>
-      <Button
-        className="commentForm__button"
-        icon={icons.addComment}
-        text="COMMENT"
-        onClick={handleSubmit}
-      />
+
     </form>
   );
 };
