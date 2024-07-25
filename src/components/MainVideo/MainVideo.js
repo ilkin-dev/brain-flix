@@ -5,7 +5,7 @@ const MainVideo = ({ currentVideoDetails, apiKey }) => {
     return <div>Loading video...</div>;
   }
 
-  let videoSrc = `https://unit-3-project-api-0a5620414506.herokuapp.com/stream?api_key=${apiKey}`;
+  let videoSrc = `${currentVideoDetails.video}?api_key=${apiKey}`;
   return (
     <div className="mainVideo section">
       <div className='container'>
