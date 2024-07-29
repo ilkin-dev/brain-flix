@@ -1,0 +1,99 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+@import "../../styles/base/typography";
+
+.upload-page {
+  &__dividerBelowTitle {
+    margin-bottom: 32px;
+
+    @include respond-to("mobile") {
+      display: none;
+    }
+  }
+
+  &__dividerOverButtons {
+    margin-bottom: 32px;
+
+    @include respond-to("mobile") {
+      display: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__thumbnailAndDetails {
+    display: flex;
+    flex-direction: column;
+    @include respond-to("desktop") {
+      flex-direction: row;
+    }
+  }
+
+  &__thumbnail {
+    margin-bottom: 16px;
+
+    @include respond-to("desktop") {
+      margin-right: 32px;
+    }
+
+    img {
+      height: 180px;
+      border-radius: $thumbnail-border-radius;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input::placeholder,
+  &__textarea::placeholder {
+    color: $color-black;
+  }
+
+  &__textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  @include respond-to("tablet") {
+    &__button {
+      width: 100%;
+      max-width: 200px;
+      margin: 5px 0;
+    }
+  }
+
+  @include respond-to("mobile") {
+    &__buttons {
+      flex-direction: column;
+      display: flex;
+    }
+
+    &__button {
+      width: 100%;
+      margin: 5px 0;
+
+      &--cancel {
+      }
+    }
+  }
+}

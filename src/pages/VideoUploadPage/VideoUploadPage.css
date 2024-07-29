@@ -1,0 +1,169 @@
+.page-header {
+  font-size: 33px;
+  line-height: 44px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .page-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+}
+
+.section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .section-header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+}
+
+.subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .subheader {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+}
+
+.body-copy {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  .body-copy {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+}
+
+.labels-buttons {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+@media (max-width: 767px) {
+  .labels-buttons {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+}
+
+.silver-text {
+  font-size: 13px;
+  line-height: 22px;
+  color: #afafaf;
+}
+@media (max-width: 767px) {
+  .silver-text {
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+
+.text-demi {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.upload-page__dividerBelowTitle {
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .upload-page__dividerBelowTitle {
+    display: none;
+  }
+}
+.upload-page__dividerOverButtons {
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .upload-page__dividerOverButtons {
+    display: none;
+  }
+}
+.upload-page__form {
+  display: flex;
+  flex-direction: column;
+}
+.upload-page__thumbnailAndDetails {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .upload-page__thumbnailAndDetails {
+    flex-direction: row;
+  }
+}
+.upload-page__thumbnail {
+  margin-bottom: 16px;
+}
+@media (min-width: 1024px) {
+  .upload-page__thumbnail {
+    margin-right: 32px;
+  }
+}
+.upload-page__thumbnail img {
+  height: 180px;
+  border-radius: 5px;
+}
+.upload-page__details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.upload-page__input-group {
+  display: flex;
+  flex-direction: column;
+}
+.upload-page__input::-moz-placeholder, .upload-page__textarea::-moz-placeholder {
+  color: #323232;
+}
+.upload-page__input::placeholder, .upload-page__textarea::placeholder {
+  color: #323232;
+}
+.upload-page__textarea {
+  height: 100px;
+  resize: none;
+}
+.upload-page__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .upload-page__button {
+    width: 100%;
+    max-width: 200px;
+    margin: 5px 0;
+  }
+}
+@media (max-width: 767px) {
+  .upload-page__buttons {
+    flex-direction: column;
+    display: flex;
+  }
+  .upload-page__button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
