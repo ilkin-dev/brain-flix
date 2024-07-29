@@ -9,18 +9,16 @@ import Avatar from '../Avatar/Avatar';
 
 import icons from '../../config/icons';
 
-
-
 const Header = () => {
   return (
     <div className="header section">
-      <Link to="/video">
+      <Link to="/">
         <Logo />
       </Link>
       <div className='header__right'>
         <SearchBar placeholder='Search' />
-        <Link to={"/upload"}>
-          <Button icon={icons.upload} text="UPLOAD" />
+        <Link to={"/upload"} className='header__uploadLink'>
+          <Button className="header__button" icon={icons.upload} text="UPLOAD" />
         </Link>
         <div className='avatar-container'>
           <Avatar isImageProvided={true} />
