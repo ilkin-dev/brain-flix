@@ -55,7 +55,7 @@ const useApi = () => {
             const newComment = await response.json();
             setCurrentVideo((prevVideo) => ({
                 ...prevVideo,
-                comments: [...prevVideo.comments, newComment],
+                comments: [newComment, ...prevVideo.comments],
             }));
         } catch (error) {
             console.error('Error posting comment:', error);

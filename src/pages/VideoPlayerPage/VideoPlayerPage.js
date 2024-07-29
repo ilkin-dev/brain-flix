@@ -6,7 +6,7 @@ import BottomGroup from '../../components/BottomGroup/BottomGroup';
 
 const VideoPlayerPage = () => {
     const { id } = useParams();
-    const { apiKey, videos, currentVideo, loading, initialize, handleVideoClick } = useApi();
+    const { apiKey, videos, currentVideo, loading, initialize, handleVideoClick, handlePostComment } = useApi();
 
     useEffect(() => {
         initialize();
@@ -35,6 +35,7 @@ const VideoPlayerPage = () => {
                 currentVideoDetails={currentVideo}
                 handleVideoClick={handleVideoClick}
                 commentsCount={commentsCount}
+                handlePostComment={handlePostComment}
             />
         </div>
     );
