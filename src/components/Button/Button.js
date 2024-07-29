@@ -4,13 +4,15 @@ import './Button.css';
 const Button = ({ className, icon, text }) => {
   let newClassName = "";
   if (className)
-    newClassName = { className } + " button labels-buttons";
+    newClassName = className + " button labels-buttons";
   else
     newClassName = " button labels-buttons";
   return (
     <button className={newClassName}>
       <img className='button__img' src={icon}></img>
-      <p className='button__text'>{text}</p>
+      <div className='button__text'>
+        <p>{text}</p>
+      </div>
     </button>
   );
 };

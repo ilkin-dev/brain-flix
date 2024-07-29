@@ -10,7 +10,7 @@
 }
 @media (max-width: 767px) {
   .searchBar {
-    width: 100%;
+    width: auto;
     margin-bottom: 16px;
     margin-right: 0px;
   }

@@ -17,17 +17,34 @@
 .header__right {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 @media (max-width: 767px) {
   .header__right {
     width: 100%;
-    flex-direction: column;
     margin-top: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .header__right .searchBar {
+    width: auto;
+    flex-grow: 2;
+    order: -1;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  .header__right .searchBar {
+    margin-bottom: 16px;
+    padding-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .header__uploadLink {
+    order: 3;
+    width: 100%;
   }
 }
 
@@ -36,6 +53,8 @@
 }
 @media (max-width: 767px) {
   .avatar-container {
-    margin-top: 16px;
+    order: 2;
+    margin-bottom: 16px;
+    margin-left: 16px;
   }
 }

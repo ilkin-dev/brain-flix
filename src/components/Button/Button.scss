@@ -9,7 +9,14 @@
   }
 
   &__text {
-    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    @include respond-to("mobile") {
+      width: 100%;
+    }
   }
 
   @include button-base;

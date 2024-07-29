@@ -1,7 +1,8 @@
 @import "../../styles/abstracts/variables";
 @import "../../styles/abstracts/mixins";
 
-$margin-after-button: 32px;
+$margin-after-button-desktop: 32px;
+$margin-after-button-mobile: 16px;
 
 .header {
   display: flex;
@@ -20,22 +21,42 @@ $margin-after-button: 32px;
   &__right {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 
     @include respond-to("mobile") {
       width: 100%;
-      flex-direction: column;
       margin-top: 16px;
       @include center-flexbox();
+
+      .searchBar {
+        width: auto;
+        flex-grow: 2;
+        order: -1;
+
+        @include respond-to("mobile") {
+          margin-bottom: 16px;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__uploadLink {
+    @include respond-to("mobile") {
+      order: 3;
+      width: 100%;
     }
   }
 }
 
 .avatar-container {
-  margin-left: $margin-after-button;
+  margin-left: $margin-after-button-desktop;
 
   @include respond-to("mobile") {
-    margin-top: 16px;
+    order: 2;
+    margin-bottom: 16px;
+    margin-left: $margin-after-button-mobile;
   }
 }

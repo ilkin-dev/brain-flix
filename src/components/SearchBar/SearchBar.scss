@@ -23,7 +23,7 @@ $bar-border-radius: 4px;
   margin-right: $margin-after-bar;
 
   @include respond-to("mobile") {
-    width: 100%;
+    width: auto;
     margin-bottom: 16px;
     margin-right: 0px;
   }
