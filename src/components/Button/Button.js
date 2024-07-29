@@ -1,19 +1,18 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ className, icon, text }) => {
+const Button = ({ className, buttonStyleType = 'button-1', type, icon, text, onClick }) => {
   let newClassName = "";
-  if (className)
-    newClassName = className + " button labels-buttons";
-  else
-    newClassName = " button labels-buttons";
+  newClassName = className + ' ' + buttonStyleType + " button labels-buttons";
+
   return (
-    <button className={newClassName}>
+    <button
+      type={type} className={newClassName} onClick={onClick} >
       <img className='button__img' src={icon}></img>
       <div className='button__text'>
-        <p>{text}</p>
+        <p className=' labels-button'>{text}</p>
       </div>
-    </button>
+    </button >
   );
 };
 
