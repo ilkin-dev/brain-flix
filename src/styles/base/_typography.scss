@@ -61,7 +61,7 @@ $font-weight-regular: 400;
   font-weight: $font-weight-demi;
 
   @include respond-to("mobile") {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 20px;
     font-weight: $font-weight-demi;
   }
