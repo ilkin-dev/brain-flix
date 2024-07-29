@@ -185,7 +185,7 @@ button {
 }
 @media (max-width: 767px) {
   .labels-buttons {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 20px;
     font-weight: 600;
   }
