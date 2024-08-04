@@ -21,4 +21,15 @@ router.get('/', (req, res) => {
     })));
 });
 
+router.get('/:id', (req, res) => {
+    const videos = JSON.parse(fs.readFileSync(dataFilePath));
+    const video = videos.find(video => video.id === req.params.id);
+
+    if (video) {
+        res.json(video);
+    } else {
+        res.status(404).send({ message: 'Video not found' });
+    }
+});
+
 module.exports = router;
