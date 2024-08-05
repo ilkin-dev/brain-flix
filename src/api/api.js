@@ -1,6 +1,9 @@
-export const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+import PORT from '../../api/index';
+
+export const API_URL = PORT;
 
 export const register = async () => {
+    console.log(api.PORT);
     try {
         const response = await fetch(`${API_URL}/register`);
         if (!response.ok) {
