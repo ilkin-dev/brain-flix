@@ -3,35 +3,30 @@ const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 
-const dataFilePath = path.join(__dirname, '../../src/data/videos.json');
+const dataFilePathForVideos = path.join(__dirname, '../../src/data/videos.json');
+const dataFilePathForVideoDetails = path.join(__dirname, '../../src/data/video-details.json');
 
-const readData = () => {
-    const rawData = fs.readFileSync(dataFilePath);
+const readData = (path) => {
+    const rawData = fs.readFileSync(path);
     return JSON.parse(rawData);
 };
 
-const writeData = (data) => {
-    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+const writeData = (data, path) => {
+    fs.writeFileSync(path, JSON.stringify(data, null, 2));
 };
 
 router.get('/', (req, res) => {
-    const videos = readData();
+    const videos = readData(dataFilePathForVideos);
     res.json(videos.map(video => ({
         id: video.id,
         title: video.title,
         channel: video.channel,
         image: video.image,
-        description: video.description,
-        views: video.views,
-        likes: video.likes,
-        duration: video.duration,
-        video: video.video,
-        timestamp: video.timestamp,
     })));
 });
 
 router.get('/:id', (req, res) => {
-    const videos = readData();
+    const videos = readData(dataFilePathForVideoDetails);
     const video = videos.find(video => video.id === req.params.id);
 
     if (video) {
@@ -42,13 +37,26 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
+    const videos = readData(dataFilePathForVideos);
+    const videosWithDetails = readData(dataFilePathForVideoDetails);
+
+    const id = (videos.length + 1).toString();
+    const title = req.body.title;
+    const channel = "Anonymous";
     const randomImage = `image${Math.floor(Math.random() * 9)}.jpg`;
 
-    const videos = readData();
     const newVideo = {
-        id: (videos.length + 1).toString(),
-        title: req.body.title,
-        channel: "Anonymous",
+        id: id,
+        title: title,
+        channel: channel,
+        image: randomImage,
+    };
+
+    const newVideoWithDetails = {
+        id: id,
+        title: title,
+        channel: channel,
         image: randomImage,
         description: req.body.description,
         views: "0",
@@ -56,9 +64,12 @@ router.post('/', (req, res) => {
         duration: "0",
         video: "https://unit-3-project-api-0a5620414506.herokuapp.com/stream",
         timestamp: Date.now(),
+        comments: []
     };
     videos.push(newVideo);
-    writeData(videos);
+    videosWithDetails.push(newVideoWithDetails);
+    writeData(videos, dataFilePathForVideos);
+    writeData(videosWithDetails, dataFilePathForVideoDetails);
 
 });
 
