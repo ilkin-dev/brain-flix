@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './MainVideo.css';
 
 const MainVideo = ({ currentVideoDetails, apiKey }) => {
-  const [isVideoPlayed, setIsVideoPlayed] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    setIsVideoPlayed(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.load();
+    }
   }, [currentVideoDetails]);
 
   if (!currentVideoDetails) {
@@ -14,28 +17,19 @@ const MainVideo = ({ currentVideoDetails, apiKey }) => {
 
   const videoSrc = `${currentVideoDetails.video}?api_key=${apiKey}`;
 
-  const handlePlay = () => {
-    setIsVideoPlayed(true);
-  };
-
-  const handlePause = () => {
-    setIsVideoPlayed(false);
-  };
-
   return (
     <div className="mainVideo section">
       <div className="container">
         <div className="videoPlayer">
           <video
+            ref={videoRef}
             className="videoPlayer__video"
             controls
             loop
             preload="auto"
             width="100%"
             height="auto"
-            poster={!isVideoPlayed ? currentVideoDetails.image : ''}
-            onPlay={handlePlay}
-            onPause={handlePause}
+            poster={currentVideoDetails.image}
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
