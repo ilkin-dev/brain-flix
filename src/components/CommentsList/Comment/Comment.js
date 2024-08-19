@@ -2,7 +2,7 @@ import './Comment.css';
 import Avatar from '../../Avatar/Avatar';
 import formatDate from '../../../helpers/timestampFormatter';
 
-const Comment = ({ name, content, date }) => {
+const Comment = ({ name, content, date, onDelete }) => {
   return (
     <div className="comment">
       <div className='comment__avatar'>
@@ -14,6 +14,7 @@ const Comment = ({ name, content, date }) => {
           <div className='comment__date silver-text'>{formatDate(date)}</div>
         </div>
         <div className='comment__content body-copy'>{content}</div>
+        <button onClick={onDelete} className="comment__delete-button">Delete</button>
       </div>
     </div>
   );

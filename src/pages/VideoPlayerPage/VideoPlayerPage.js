@@ -1,15 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import useApi from '../../api/useApi';
+import { getVideos, getVideosById, postComment } from '../../api/api';
 import MainVideo from '../../components/MainVideo/MainVideo';
 import BottomGroup from '../../components/BottomGroup/BottomGroup';
 
 const VideoPlayerPage = () => {
     const { id } = useParams();
-    const { apiKey, videos, currentVideo, loading, initialize, handleVideoClick, handlePostComment } = useApi();
+    const [videos, setVideos] = useState([]);
+    const [loading, setLoadingState] = useState(true);
+    const [currentVideo, setCurrentVideo] = useState(null);
+
+    const handleVideoClick = (id) => {
+        getVideosById(id)
+            .then(response => {
+                setCurrentVideo(response.data);
+                setLoadingState(false);
+            })
+            .catch(error => {
+                console.error('Error fetching videos:', error);
+            });
+    }
 
     useEffect(() => {
-        initialize();
+        getVideos()
+            .then(response => {
+                setVideos(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching videos:', error);
+            });
     }, []);
 
     useEffect(() => {
@@ -20,6 +39,8 @@ const VideoPlayerPage = () => {
         }
     }, [id, videos]);
 
+
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -29,13 +50,12 @@ const VideoPlayerPage = () => {
 
     return (
         <div>
-            <MainVideo currentVideoDetails={currentVideo} apiKey={apiKey} />
+            <MainVideo currentVideoDetails={currentVideo} />
             <BottomGroup
                 videos={sideVideos}
                 currentVideoDetails={currentVideo}
                 handleVideoClick={handleVideoClick}
                 commentsCount={commentsCount}
-                handlePostComment={handlePostComment}
             />
         </div>
     );
