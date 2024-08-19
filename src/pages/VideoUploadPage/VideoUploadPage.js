@@ -13,6 +13,8 @@ const VideoUploadPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (formRef.current.title.value === '' || formRef.current.description.value === '') { navigate('/video'); return; }
+
         const newVideo =
         {
             title: formRef.current.title.value,
