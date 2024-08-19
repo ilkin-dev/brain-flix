@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './VideoUploadPage.css';
 import uploadImage from '../../assets/images/Upload-video-preview.jpg';
 import Divider from '../../components/Divider/Divider';
 import Button from '../../components/Button/Button';
 import icons from '../../config/icons';
+import { uploadVideo } from '../../api/api';
 
 const VideoUploadPage = () => {
     const navigate = useNavigate();
+    const formRef = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('Video uploaded successfully!');
+        const newVideo =
+        {
+            title: formRef.current.title.value,
+            description: formRef.current.description.value
+        }
+        uploadVideo(newVideo);
+        formRef.current.reset();
         navigate('/video');
     };
 
@@ -21,7 +29,7 @@ const VideoUploadPage = () => {
             <div className="upload-page component section">
                 <h1 className="upload-page__title headline page-header">Upload Video</h1>
                 <Divider clsName='upload-page__dividerBelowTitle' />
-                <form className="upload-page__form" onSubmit={handleSubmit}>
+                <form className="upload-page__form" onSubmit={handleSubmit} ref={formRef}>
                     <div className='upload-page__thumbnailAndDetails'>
                         <div className='upload-page__thumbnailContainer'>
                             <label className="upload-page__label silver-text text-demi">VIDEO THUMBNAIL</label>
