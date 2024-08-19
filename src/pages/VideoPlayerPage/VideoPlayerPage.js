@@ -46,7 +46,6 @@ const VideoPlayerPage = () => {
     }
 
     const sideVideos = videos.filter(video => video.id !== currentVideo?.id);
-    const commentsCount = currentVideo?.comments?.length || 0;
 
     return (
         <div>
@@ -55,7 +54,6 @@ const VideoPlayerPage = () => {
                 videos={sideVideos}
                 currentVideoDetails={currentVideo}
                 handleVideoClick={handleVideoClick}
-                commentsCount={commentsCount}
             />
         </div>
     );

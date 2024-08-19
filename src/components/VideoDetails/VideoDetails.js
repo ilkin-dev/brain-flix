@@ -6,7 +6,7 @@ import icons from '../../config/icons';
 import DetailItem from './DetailItem/DetailItem';
 import Divider from '../Divider/Divider';
 
-const VideoDetails = ({ details, commentCount }) => {
+const VideoDetails = ({ details, commentsCount }) => {
   return (
     <div className="videoDetails">
       <h1 className='videoDetails__title page-header headline'>{details.title}</h1>
@@ -27,7 +27,7 @@ const VideoDetails = ({ details, commentCount }) => {
         {details.description}
       </p>
       <p className='videoDetails__commentNumber subheader'>
-        {commentCount} Comments
+        {commentsCount} Comments
       </p>
     </div>
 

@@ -7,7 +7,7 @@ import SideVideos from '../SideVideos/SideVideos';
 import CommentForm from '../CommentForm/CommentForm';
 import { postComment } from '../../api/api';
 
-const BottomGroup = ({ videos, currentVideoDetails, handleVideoClick, commentsCount }) => {
+const BottomGroup = ({ videos, currentVideoDetails, handleVideoClick }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const BottomGroup = ({ videos, currentVideoDetails, handleVideoClick, commentsCo
   return (
     <div className="bottomGroup section">
       <div className='bottomGroup__detailAndComment'>
-        <VideoDetails details={currentVideoDetails} commentsCount={commentsCount} />
+        <VideoDetails details={currentVideoDetails} commentsCount={currentVideoDetails.comments.length} />
         <CommentForm onAddComment={handleAddComment} />
         <CommentsList videoId={currentVideoDetails.id} commentsList={comments || []} onCommentDeleted={handleCommentDeleted} />
       </div>
